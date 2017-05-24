@@ -1,0 +1,8 @@
+int16 steer_angle_axis
+int16 forward_speed_axis
+int16 backward_speed_axis
+int16 camera_pan_axis
+int16 camera_tilt_axis
+int16 camera_pan_button
+int16 camera_tilt_button
+string command
