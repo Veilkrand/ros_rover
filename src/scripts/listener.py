@@ -4,6 +4,7 @@ import rospy
 from std_msgs.msg import String
 from ros_rover.msg import Rover
 from Robot4WD import Robot4WD
+from PanTilt import PanTilt
 
 LEFT_TRIM   = 0
 RIGHT_TRIM  = 0

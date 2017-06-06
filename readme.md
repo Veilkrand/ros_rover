@@ -1,8 +1,13 @@
-##
-TODO:
+## Nodes
+A[talker.py] -- Create Service --> B(chatter)
+C[listener.py] == Subscribe ==> B(chatter)
+D[pantilt_listener.py] == Subscribe ==> B(chatter)
+
+
+
+---
+## TODO:
 - Show latency from UDP timestamp
-- Change names to a real project:
--- `beginner_tutorials`
 -- `listener.py`, `talker.py`, chatter topic
 - Being able to control over 3G
 

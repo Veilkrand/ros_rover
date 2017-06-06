@@ -16,19 +16,22 @@ def talker():
     while not rospy.is_shutdown():
         data=server.listen(False) #True for verbose
         
-        steer=int(interp(data['axis'][2],[-1,1],[-255,255]))
-        speed=int(interp(data['axis'][4],[-1,1],[0,255]))
-        back_speed=int(interp(data['axis'][5],[-1,1],[0,255]))
+        steer=int(interp(data['axis'][1],[-1,1],[-255,255]))
+        speed=int(interp(data['axis'][5],[-1,1],[0,255]))
+        back_speed=int(interp(data['axis'][4],[-1,1],[0,255]))
 
-        camera_pan_axis=0
-        camera_tilt_axis=0
-        camera_pan_button=0
-        camera_tilt_button=0
+        camera_pan_axis=int(interp(data['axis'][2],[-1,1],[-255,255]))
+        camera_tilt_axis=int(interp(data['axis'][3],[-1,1],[-255,255]))
+        camera_pan_button=int(data['hat'][0])
+        camera_tilt_button=int(data['hat'][1])
 
         command='test'
 
         #rospy.loginfo(data)
-        pub.publish(steer,speed,back_speed,camera_pan_axis,camera_tilt_axis,camera_pan_button,camera_tilt_button,command)
+        pub.publish(
+            steer,speed,back_speed,
+            camera_pan_axis,camera_tilt_axis,camera_pan_button,camera_tilt_button,
+            command)
         #rate.sleep()
         #rospy.spin
 
