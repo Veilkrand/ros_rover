@@ -1,0 +1,6 @@
+<launch>
+<node name="talker" pkg="ros_rover" type="talker.py" respawn="true"/>
+<node name="listener" pkg="ros_rover" type="listener.py" respawn="true"/>
+<node name="pantilt_listener" pkg="ros_rover" type="pantilt_listener.py" respawn="true" output="screen"/>
+</launch>
+
