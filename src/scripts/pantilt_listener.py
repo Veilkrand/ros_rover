@@ -12,17 +12,20 @@ pt = PanTilt()
 def callback(data):
     #rospy.loginfo(rospy.get_caller_id() + 'I heard %s', data.speed)
     
-    pan=int(interp(data.camera_pan_axis,[0,255],[-90,90]))
-    tilt=int(interp(data.camera_tilt_axis,[0,255],[-90,90]))
+    pan=int(interp(data.camera_pan_axis,[-255,255],[-90,90]))
+    tilt=int(interp(data.camera_tilt_axis,[-255,255],[-90,90]))
     
     ## Switch!
     # pt.panTilt(pan,tilt)
-    pt.panTilt(tilt,-pan)
+    pt.panTilt(-pan,tilt)
 
     ## Switch!
     #pt.increaseOffset(data.camera_tilt_button,data.camera_pan_button)
-    pt.increaseOffset(-data.camera_tilt_button,-data.camera_pan_button)
+    pt.increaseOffset(-data.camera_pan_button,-data.camera_tilt_button)
 
+    if (data.command=='CAMERA_CENTER'):
+	pt.offset_pan=0
+	pt.offset_tilt=0
     print "(%s,%s) Pan: %s Tilt: %s "%(data.camera_pan_button,data.camera_tilt_button,pan,tilt)
     
 def listener():

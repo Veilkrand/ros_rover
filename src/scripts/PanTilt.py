@@ -57,23 +57,23 @@ class PanTilt(object):
 
 		if pan>0:
 			self.offset_pan=self.offset_pan+self.offset_pan_step
-			if (self.offset_pan>self.MAX_PAN/2): self.offset_pan=self.MAX_PAN/2
+			if (self.offset_pan>self.MAX_PAN): self.offset_pan=self.MAX_PAN
 			self.refreshPan()
 			#time.sleep(0.5)
 		elif pan<0:
 			self.offset_pan=self.offset_pan-self.offset_pan_step
-			if (self.offset_pan<-self.MAX_PAN/2): self.offset_pan=-self.MAX_PAN/2
+			if (self.offset_pan<-self.MAX_PAN): self.offset_pan=-self.MAX_PAN
 			self.refreshPan()
 			#time.sleep(0.5)
 
 
 		if tilt>0:
 			self.offset_tilt=self.offset_tilt+self.offset_tilt_step
-			if (self.offset_tilt>self.MAX_TILT/2): self.offset_tilt=self.MAX_TILT/2
+			if (self.offset_tilt>self.MAX_TILT): self.offset_tilt=self.MAX_TILT
 			self.refreshTilt()
 			#time.sleep(0.5)
 		elif tilt<0:
 			self.offset_tilt=self.offset_tilt-self.offset_tilt_step
-			if (self.offset_tilt<-self.MAX_TILT/2): self.offset_tilt=-self.MAX_TILT/2
+			if (self.offset_tilt<-self.MAX_TILT): self.offset_tilt=-self.MAX_TILT
 			self.refreshTilt()
 			#time.sleep(0.5)

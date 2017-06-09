@@ -4,12 +4,42 @@ C[listener.py] == Subscribe ==> B(chatter)
 D[pantilt_listener.py] == Subscribe ==> B(chatter)
 
 
-
 ---
 ## TODO:
 - Show latency from UDP timestamp
--- `listener.py`, `talker.py`, chatter topic
+	- Timestamp in messsages
+	- Calculate latency in SimpleServer
+- Rename `listener.py`, `talker.py`, chatter topic
 - Being able to control over 3G
+- Main dashboard
+- Control Lights
+
+---
+# PS4 Controls:
+
+## Camera Control:
+- Pad: Move camera center
+- R Axis: Look camera around
+- R3 Button: Center Camer
+## Movement control
+- L Axis: Steering
+- R2: Accelerate forward
+- L2: Accelerate backwards
+
+---
+# Work Setup
+
+## Start controller client in local machine
+python client.py -h 10.8.0.10 --python2
+
+## Mount FS
+sudo sshfs -o allow_other,defer_permissions pi@10.8.0.10:/ /Users/alberto.naranjo/Documents/Raspberry\ PI/mount
+
+## Start working and launch from home/
+. start_ros.bash
+
+
+---
 
 ## Start Working environment
 cd ~/ros_catkin_ws
@@ -27,9 +57,6 @@ nohup roscore &
 killall -9 roscore
 killall -9 rosmaster
 --
-# Nodes
-
-talker.py (UDP Server) -> ['chatter' topic] <- lister.py (robot Controller)
 
 ## Start nodes
 

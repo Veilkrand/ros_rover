@@ -25,9 +25,12 @@ def talker():
         camera_pan_button=int(data['hat'][0])
         camera_tilt_button=int(data['hat'][1])
 
-        command='test'
-
-        #rospy.loginfo(data)
+        
+	command='test'
+	if (data['buttons'][11]):
+	    command='CAMERA_CENTER'
+        
+	#rospy.loginfo(data)
         pub.publish(
             steer,speed,back_speed,
             camera_pan_axis,camera_tilt_axis,camera_pan_button,camera_tilt_button,
