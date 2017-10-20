@@ -6,6 +6,7 @@ D[pantilt_listener.py] == Subscribe ==> B(chatter)
 
 ---
 ## TODO:
+- Implement differential driving
 - Show latency from UDP timestamp
 	- Timestamp in messsages
 	- Calculate latency in SimpleServer
@@ -43,13 +44,14 @@ sudo sshfs -o allow_other,defer_permissions pi@10.8.0.10:/ /Users/alberto.naranj
 
 ## Start Working environment
 cd ~/ros_catkin_ws
-. ~/ros_catkin_ws/devel/setup.bash
+. devel/setup.bash
 roscd ros_rover
 
-## Build package
+## Build package and Source
 > Only first time when you have a new one.
 ~/ros_catkin_ws
 catkin_make
+. devel/setup.bash
 
 ## Start Core
 nohup roscore &
